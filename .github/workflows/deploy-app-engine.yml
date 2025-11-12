@@ -25,7 +25,8 @@ jobs:
         pip install -r requirements.txt
 
     - name: Unit Test
-      run: python -m pytest tests
+      run: | 
+        python -m pytest tests
 
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v2
