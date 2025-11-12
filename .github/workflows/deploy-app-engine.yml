@@ -24,19 +24,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-
-    #Task 2:
-    #Add a step to run the unit test
     - name: Unit Test
       run: python -m pytest tests
 
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v2
       with:
-	#Task 3:
-        #i: create a service account and export it's json key
-        #ii: create a github action scret call GAE_SA_KEY, 
-	#and use the json key above as the content
         credentials_json: ${{ secrets.GAE_SA_KEY }}
 
     - name: Deploy to App Engine
